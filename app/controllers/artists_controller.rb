@@ -5,12 +5,12 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
 
-    render json: @artists
+    render json: @artists.as_json(include: {glams: {only:[:id, :glam_squad, :makeup, :hair, :wardrobe, :artist_id]}})
   end
 
   # GET /artists/1
   def show
-    render json: @artist
+    render json: @artist.as_json(include: {glams: {only:[:id, :glam_squad, :makeup, :hair, :wardrobe, :artist_id]}})
   end
 
   # POST /artists
@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
 
     if @artist.save
-      render json: @artist, status: :created, location: @artist
+      render json: @artist.as_json(include: {glams: {only:[:id, :glam_squad, :makeup, :hair, :wardrobe]}}), status: :created, location: @artist
     else
       render json: @artist.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class ArtistsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def artist_params
-      params.require(:artist).permit(:name, :gender, :age, :height, :image)
+      params.require(:artist).permit(:name, :gender, :age, :height, :image, glams_attributes: [:glam_squad,:makeup, :hair, :wardrobe, :artist_name])
     end
 end
