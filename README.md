@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Front End is [here]https://github.com/billymeku/Artists-frontend-
