@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  glam_squad: MyString
+  makeup: MyString
+  hair: MyString
+  wardrobe: MyString
+  artist_id: 1
+
+two:
+  glam_squad: MyString
+  makeup: MyString
+  hair: MyString
+  wardrobe: MyString
+  artist_id: 1
