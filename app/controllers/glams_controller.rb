@@ -3,9 +3,12 @@ class GlamsController < ApplicationController
 
   # GET /glams
   def index
-    @glams = Glam.all
-
-    render json: @glams
+    if params[:artist_id]
+      @artist = Artist.find(params[:artist_id])
+      @glams = @artist.glams
+    else
+      @glams = Glam.all
+    end
   end
 
   # GET /glams/1
