@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
 
   # GET /artists
   def index
+    # binding.pry
     @artists = Artist.all
 
     render json: @artists.as_json(include: {glams: {only:[:id, :glam_squad, :makeup, :hair, :wardrobe, :artist_id]}})
