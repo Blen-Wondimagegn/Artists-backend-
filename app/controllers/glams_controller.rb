@@ -3,12 +3,15 @@ class GlamsController < ApplicationController
 
   # GET /glams
   def index
+    # binding.pry
     if params[:artist_id]
       @artist = Artist.find(params[:artist_id])
       @glams = @artist.glams
+
     else
-      @glams = Glam.all
+      @glams = Glam.all   
     end
+      render json: @glams
   end
 
   # GET /glams/1
