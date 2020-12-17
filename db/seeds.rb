@@ -11,10 +11,8 @@
         gender: Faker::Demographic.sex,
         height: Faker::Demographic.height(unit: :imperial), 
         age: Faker::Number.within(range: 20..35),
-        image:".kpop-imgs/52837039_770631773269924_2652184576348127232_o.jpg"
       }])
- }
-
+    }
 3.times {
     Glam.create([{
         glam_squad: Faker::Space.star,
