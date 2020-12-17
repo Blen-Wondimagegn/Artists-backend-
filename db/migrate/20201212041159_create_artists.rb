@@ -5,7 +5,6 @@ class CreateArtists < ActiveRecord::Migration[6.0]
       t.string :gender
       t.integer :age
       t.string :height
-      t.string :image
 
       t.timestamps
     end
